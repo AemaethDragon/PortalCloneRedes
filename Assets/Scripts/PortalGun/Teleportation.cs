@@ -7,30 +7,30 @@ public class Teleportation : MonoBehaviour
     #region variables
     
     private Transform goTo;
+    public GameObject player;
 
     public bool isLeft;
     #endregion
 
     #region methods
-    void Start()
+    void OnTriggerEnter(Collider col)
     {
-        if (isLeft == false)
+        if (col.gameObject.CompareTag("Player") && this.gameObject.CompareTag("PortalLeft"))
         {
-            goTo = GameObject.FindGameObjectWithTag("PortalLeft").GetComponent<Transform>();
-        }
-        else
-        {
+            Debug.Log("ENTERED");
             goTo = GameObject.FindGameObjectWithTag("PortalRight").GetComponent<Transform>();
         }
-    }
-    
-    void OnTriggerEnter(Collider other)
-    {       
-        if (Vector3.Distance(transform.position, other.transform.position) < 0.2f)
+        else if (col.gameObject.CompareTag("Player") && this.gameObject.CompareTag("PortalRight"))
         {
-            other.transform.position = new Vector3(goTo.position.x, goTo.position.y, goTo.position.z);
+            Debug.Log("ENTERED2");
+            goTo = GameObject.FindGameObjectWithTag("PortalLeft").GetComponent<Transform>();
+        }
+        
+        if (Vector3.Distance(transform.position, col.transform.position) < 0.2f)
+        {
+            col.transform.position = new Vector3(goTo.position.x, goTo.position.y, goTo.position.z);
                                
-            other.transform.Rotate(Vector3.up, 180f);
+            col.transform.Rotate(Vector3.up, 180f);
         }                
     }
     #endregion
