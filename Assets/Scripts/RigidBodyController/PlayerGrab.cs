@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Grab : MonoBehaviour
+public class PlayerGrab : MonoBehaviour
 {
-    public Transform Destination;
+    public Transform destination, playerBody, playerCam;
+    
+    private bool _holding;
 
 
     // Update is called once per frame
@@ -12,26 +14,32 @@ public class Grab : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            GrabObject();
+            if (!_holding)
+            {
+                GrabObject();
+            }
         }
         if (Input.GetKeyDown(KeyCode.Q))
         {
             DropObject();
+            _holding = true;
         }
     }
 
-    public void GrabObject()
+    void GrabObject()
     {
         GetComponent<BoxCollider>().enabled = false;
         GetComponent<Rigidbody>().useGravity = false;
-        this.transform.position = Destination.position;
-        this.transform.parent = GameObject.Find("ObjDestiny").transform;
+        GetComponent<Rigidbody>().freezeRotation = true;
+        transform.position = destination.position;
+        transform.parent = destination.parent;
     }
 
-    public void DropObject()
+    void DropObject()
     {
-        this.transform.parent = null;
+        transform.parent = null;
         GetComponent<BoxCollider>().enabled = true;
         GetComponent<Rigidbody>().useGravity = true;
+        GetComponent<Rigidbody>().freezeRotation = false;
     }
 }

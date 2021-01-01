@@ -12,11 +12,15 @@
             <e p="OptionsMenu.cs" t="Include" />
             <e p="PauseMenu.cs" t="Include" />
           </e>
+          <e p="Objects" t="Include">
+            <e p="Pickupable.cs" t="Include" />
+          </e>
           <e p="PortalGun" t="Include">
             <e p="CreatePortal.cs" t="Include" />
             <e p="Teleportation.cs" t="Include" />
           </e>
           <e p="RigidBodyController" t="Include">
+            <e p="PickupObject.cs" t="Include" />
             <e p="PlayerGrab.cs" t="Include" />
             <e p="PlayerLook.cs" t="Include" />
             <e p="PlayerMovement.cs" t="Include" />

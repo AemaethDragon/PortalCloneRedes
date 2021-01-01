@@ -14,6 +14,7 @@ public class CreatePortal : MonoBehaviour
     private bool portalRightActive = true;
     private GameObject portalLeftClone;
     private GameObject portalRightClone;
+    private GameObject _mainCamera;
 
     Ray _bullet;
     RaycastHit _hit;
@@ -21,6 +22,11 @@ public class CreatePortal : MonoBehaviour
     #endregion
 
     #region methods
+
+    void Start()
+    {
+        _mainCamera = GameObject.FindWithTag("MainCamera");
+    }
 
     void Update()
     {
@@ -59,7 +65,7 @@ public class CreatePortal : MonoBehaviour
         int x = Screen.width / 2;
         int y = Screen.height / 2;
 
-        _bullet = Camera.main.ScreenPointToRay(new Vector3(x, y));
+        _bullet = _mainCamera.GetComponent<Camera>().ScreenPointToRay(new Vector3(x, y));
 
         if (Physics.Raycast(_bullet, out _hit))
         {
@@ -73,7 +79,7 @@ public class CreatePortal : MonoBehaviour
         int x = Screen.width / 2;
         int y = Screen.height / 2;
 
-        _bullet = Camera.main.ScreenPointToRay(new Vector3(x, y));
+        _bullet = _mainCamera.GetComponent<Camera>().ScreenPointToRay(new Vector3(x, y));
 
         if (Physics.Raycast(_bullet, out _hit))
         {

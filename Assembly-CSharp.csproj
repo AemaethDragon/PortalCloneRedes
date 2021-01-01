@@ -61,8 +61,10 @@
      <Compile Include="Assets\Scripts\Menu\MainMenu.cs" />
      <Compile Include="Assets\Scripts\Menu\OptionsMenu.cs" />
      <Compile Include="Assets\Scripts\Menu\PauseMenu.cs" />
+     <Compile Include="Assets\Scripts\Objects\Pickupable.cs" />
      <Compile Include="Assets\Scripts\PortalGun\CreatePortal.cs" />
      <Compile Include="Assets\Scripts\PortalGun\Teleportation.cs" />
+     <Compile Include="Assets\Scripts\RigidBodyController\PickupObject.cs" />
      <Compile Include="Assets\Scripts\RigidBodyController\PlayerGrab.cs" />
      <Compile Include="Assets\Scripts\RigidBodyController\PlayerLook.cs" />
      <Compile Include="Assets\Scripts\RigidBodyController\PlayerMovement.cs" />

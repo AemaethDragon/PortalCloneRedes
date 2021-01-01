@@ -113,6 +113,7 @@ GameObject:
   - component: {fileID: 6174052911702747405}
   - component: {fileID: 6174052911702747402}
   - component: {fileID: 6174052911702747404}
+  - component: {fileID: 575599225023805162}
   m_Layer: 0
   m_Name: PlayerTest
   m_TagString: Player
@@ -248,3 +249,17 @@ MonoBehaviour:
     type: 3}
   portalRight: {fileID: 8144807372611614243, guid: c0a0fcf0c45120849b296a82a9b41604,
     type: 3}
+--- !u!114 &575599225023805162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6174052911702747639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ad67da744e33dc40ab5f1dec436bb1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distance: 3
+  smoothing: 4
