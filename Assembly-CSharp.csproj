@@ -67,6 +67,7 @@
     <Compile Include="Assets\Scripts\Menu\MainMenu.cs" />
     <Compile Include="Assets\Scripts\Menu\OptionsMenu.cs" />
     <Compile Include="Assets\Scripts\Menu\PauseMenu.cs" />
+    <Compile Include="Assets\Scripts\Objects\Creatable.cs" />
     <Compile Include="Assets\Scripts\Objects\Pickupable.cs" />
     <Compile Include="Assets\Scripts\PortalGun\CreatePortal.cs" />
     <Compile Include="Assets\Scripts\PortalGun\Teleportation.cs" />
@@ -76,9 +77,6 @@
     <Compile Include="Assets\Scripts\RigidBodyController\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\Sound\AudioManager.cs" />
     <Compile Include="Assets\Scripts\Sound\Sound.cs" />
-    <Compile Include="Assets\Scripts\TCP\PlayerController.cs" />
-    <Compile Include="Assets\Scripts\TCP\PlayerUiController.cs" />
-    <Compile Include="Assets\Scripts\TCP\TcpClientController.cs" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />

@@ -83,8 +83,14 @@ public class CreatePortal : MonoBehaviour
 
         if (Physics.Raycast(_bullet, out _hit))
         {
-            portal.transform.position = _hit.point;
-            portal.transform.rotation = Quaternion.LookRotation(_hit.normal);
+
+            Creatable c = _hit.collider.GetComponent<Creatable>();
+            if (c != null)
+            {
+                portal.transform.position = _hit.point;
+                portal.transform.rotation = Quaternion.LookRotation(_hit.normal);
+            }
+            
         }
     }
 
