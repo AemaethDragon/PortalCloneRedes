@@ -1,7 +1,8 @@
-﻿using System.Data.Common;
+﻿using Common;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using UnityEngine;
@@ -9,26 +10,30 @@ using UnityEngine.UI;
 
 public class TcpClientController : MonoBehaviour
 {
+
     [HideInInspector]
     public Player Player;
+    private Dictionary<Guid, GameObject> _playerGameObjectDict;
 
+    public GameObject SpawPoint;
+    public GameObject PlayerPrefab;
+    public GameObject ConnectionUI;
     public Text PlayerNameInputText;
     public string IpAddress;
     public int Port;
-    public GameObject PlayerPrefab;
-    public GameObject SpawnPoint;
-    public GameObject ConnectionUI;
-
-    private Dictionary<Guid, GameObject> _players;
 
     private void Awake()
     {
-        _players = new Dictionary<Guid, GameObject>();
-
         Player = new Player();
+        _playerGameObjectDict = new Dictionary<Guid, GameObject>();
         Player.GameState = GameState.Disconnected;
         Player.TcpClient = new TcpClient();
     }
+    void Start()
+    {
+
+    }
+
     void Update()
     {
         if (Player.TcpClient.Connected)
@@ -40,15 +45,22 @@ public class TcpClientController : MonoBehaviour
                     Connecting();
                     break;
                 case GameState.Connected:
+                    Debug.Log("Connected");
                     Connected();
                     break;
                 case GameState.Sync:
+                    Debug.Log("Syncing");
                     Sync();
                     break;
                 case GameState.GameStarted:
+                    Debug.Log("GameStarted");
                     GameStarted();
                     break;
             }
+        }
+        else
+        {
+            Debug.Log("Disconnected");
         }
     }
 
@@ -56,103 +68,137 @@ public class TcpClientController : MonoBehaviour
     {
         if (Player.DataAvailable())
         {
-            Message m = Player.ReadMessage();
-            if (m.MessageType == MessageType.NewPlayer)
+            Message message = ReceiveMessage();
+            if (message.MessageType == MessageType.NewPlayer)
             {
-                GameObject newPlayer = Instantiate(PlayerPrefab,
-                    new Vector3(m.PlayerInfo.X, m.PlayerInfo.Y, m.PlayerInfo.Z), Quaternion.identity);
-                newPlayer.GetComponent<PlayerUiController>().PlayerName.text = m.PlayerInfo.Name;
-                _players.Add(m.PlayerInfo.Id, newPlayer);
+                GameObject playerGameObject = Instantiate(PlayerPrefab,
+                    new Vector3(message.PlayerInfo.X, message.PlayerInfo.Y, message.PlayerInfo.Z),
+                    Quaternion.identity);
+                playerGameObject.GetComponent<PlayerUiController>().PlayerName.text =
+                    message.PlayerInfo.Name;
+                _playerGameObjectDict.Add(message.PlayerInfo.Id, playerGameObject);
             }
-            else if (m.MessageType == MessageType.PlayerMovement)
+            else if (message.MessageType == MessageType.PlayerMovement)
             {
-                if (m.PlayerInfo.Id != Player.Id && _players.ContainsKey(m.PlayerInfo.Id))
+                if (_playerGameObjectDict.ContainsKey(message.PlayerInfo.Id) &&
+                    message.PlayerInfo.Id != Player.Id)
                 {
-                    _players[m.PlayerInfo.Id].transform.position =
-                        new Vector3(m.PlayerInfo.X, m.PlayerInfo.Y, m.PlayerInfo.Z);
+                    _playerGameObjectDict[message.PlayerInfo.Id].transform.position =
+                        new Vector3(message.PlayerInfo.X, message.PlayerInfo.Y, message.PlayerInfo.Z);
                 }
             }
         }
     }
+
     private void Sync()
     {
-        Debug.Log("Sync");
         if (Player.DataAvailable())
         {
-            Message message = Player.ReadMessage();
+            Message message = ReceiveMessage();
 
+            // processar messages NewPlayer
             if (message.MessageType == MessageType.NewPlayer)
             {
-                GameObject gameObject = Instantiate(PlayerPrefab,
+                GameObject playerGameObject = Instantiate(PlayerPrefab,
                     new Vector3(message.PlayerInfo.X, message.PlayerInfo.Y, message.PlayerInfo.Z),
                     Quaternion.identity);
-                gameObject.GetComponent<PlayerUiController>().PlayerName.text = message.PlayerInfo.Name;
-
-                _players.Add(message.PlayerInfo.Id, gameObject);
+                playerGameObject.GetComponent<PlayerUiController>().PlayerName.text
+                    = message.PlayerInfo.Name;
+                _playerGameObjectDict.Add(message.PlayerInfo.Id, playerGameObject);
             }
-            else if  (message.MessageType == MessageType.PlayerMovement)
-            { 
-                if (_players.ContainsKey(message.PlayerInfo.Id))
+            // processar messages PlayerMovement
+            else if (message.MessageType == MessageType.PlayerMovement)
+            {
+                if (_playerGameObjectDict.ContainsKey(message.PlayerInfo.Id))
                 {
-                    _players[message.PlayerInfo.Id].transform.position =
+                    _playerGameObjectDict[message.PlayerInfo.Id].transform.position =
                         new Vector3(message.PlayerInfo.X, message.PlayerInfo.Y, message.PlayerInfo.Z);
                 }
             }
             else if (message.MessageType == MessageType.FinishedSync)
             {
                 ConnectionUI.SetActive(false);
-                GameObject player = Instantiate(PlayerPrefab, SpawnPoint.transform.position, Quaternion.identity);
-                player.GetComponent<PlayerController>().TcpClient = this;
-                player.GetComponent<PlayerController>().Playable = true;
-                player.GetComponent<PlayerController>().enabled = true;
-                player.GetComponent<PlayerUiController>().PlayerName.text = Player.Name;
+                GameObject playerGameObject =
+                    Instantiate(PlayerPrefab, SpawPoint.transform.position, Quaternion.identity);
+                playerGameObject.GetComponent<PlayerController>().TcpClientController = this;
+                playerGameObject.GetComponent<PlayerController>().Playable = true;
+                playerGameObject.GetComponent<PlayerController>().enabled = true;
+                playerGameObject.GetComponent<PlayerUiController>().PlayerName.text = Player.Name;
 
-                _players.Add(Player.Id, player);
+                _playerGameObjectDict.Add(Player.Id, playerGameObject);
+
                 Player.GameState = GameState.GameStarted;
             }
         }
     }
+
     private void Connected()
     {
         if (Player.DataAvailable())
         {
-            Debug.Log("Connected");
-
-            Message message = Player.ReadMessage();
+            Message message = ReceiveMessage();
             Debug.Log(message.Description);
             Player.GameState = GameState.Sync;
         }
     }
+
     private void Connecting()
     {
-     if (Player.DataAvailable())
+        if (Player.TcpClient.GetStream().DataAvailable)
         {
-            Player playerJson = Player.ReadPlayer();
-            Player.Id = playerJson.Id;
+            string playerJsonString = Player.BinaryReader.ReadString();
+            Player player = JsonConvert.DeserializeObject<Player>(playerJsonString);
+            Player.Id = player.Id;
+            Player.MessageList.Add(player.MessageList.FirstOrDefault());
             Player.Name = PlayerNameInputText.text;
 
-            Player.SendPlayer(Player);
+            Message message = new Message();
+            message.MessageType = MessageType.PlayerName;
+            Player.MessageList.Add(message);
+
+            string newPlayerJsonString = JsonConvert.SerializeObject(Player);
+            Player.BinaryWriter.Write(newPlayerJsonString);
             Player.GameState = GameState.Connected;
         }
     }
+
+    private Message ReceiveMessage()
+    {
+        string msgJson = Player.BinaryReader.ReadString();
+        Message msg = JsonConvert.DeserializeObject<Message>(msgJson);
+        Player.MessageList.Add(msg);
+        return msg;
+    }
+
+    public void SendMessage(Message message)
+    {
+        string messageJson = JsonConvert.SerializeObject(message);
+        Player.BinaryWriter.Write(messageJson);
+        Player.MessageList.Add(message);
+    }
+
     public void StartTcpClient()
     {
         Player.TcpClient.BeginConnect(IPAddress.Parse(IpAddress), Port,
             AcceptConnection, Player.TcpClient);
         Player.GameState = GameState.Connecting;
     }
-    public void AcceptConnection(IAsyncResult result)
-    {
-        TcpClient client = (TcpClient)result.AsyncState;
-        client.EndConnect(result);
 
-        if (client.Connected)
+    private void AcceptConnection(IAsyncResult ar)
+    {
+        TcpClient tcpClient = (TcpClient)ar.AsyncState;
+        tcpClient.EndConnect(ar);
+
+        if (tcpClient.Connected)
         {
-            Debug.Log("Connected");
+            Debug.Log("Client connected");
+            Player.BinaryReader = new System.IO.BinaryReader(tcpClient.GetStream());
+            Player.BinaryWriter = new System.IO.BinaryWriter(tcpClient.GetStream());
+            Player.MessageList = new List<Message>();
         }
         else
         {
-            Debug.Log("Connection to the server refused");
+            Debug.Log("Client connection refused");
         }
     }
 }
