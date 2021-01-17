@@ -2089,13 +2089,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 517290e75ee634344a82d30282d8dfe8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpawPoint: {fileID: 6862206063141912914}
-  PlayerPrefab: {fileID: 9106692922100016109, guid: fa92110d372c5ca408bc3d7fe08ba71e,
-    type: 3}
-  ConnectionUI: {fileID: 1733759218}
   PlayerNameInputText: {fileID: 1568747023}
   IpAddress: 127.0.0.1
   Port: 7777
+  PlayerPrefab: {fileID: 9106692922100016109, guid: fa92110d372c5ca408bc3d7fe08ba71e,
+    type: 3}
+  SpawnPoint: {fileID: 6862206063141912914}
+  ConnectionUI: {fileID: 1733759218}
 --- !u!4 &2013851022
 Transform:
   m_ObjectHideFlags: 0
