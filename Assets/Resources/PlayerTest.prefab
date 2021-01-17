@@ -190,11 +190,9 @@ GameObject:
   - component: {fileID: 9106692922100016023}
   - component: {fileID: 9106692922100016016}
   - component: {fileID: 9106692922100016017}
-  - component: {fileID: 9106692922100016018}
-  - component: {fileID: 9106692922100016019}
-  - component: {fileID: 9106692922100016108}
   - component: {fileID: 3769490334828253054}
   - component: {fileID: 8680092200836629283}
+  - component: {fileID: 5110110818977400008}
   m_Layer: 0
   m_Name: PlayerTest
   m_TagString: Player
@@ -295,56 +293,6 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 112
   m_CollisionDetection: 1
---- !u!114 &9106692922100016018
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9106692922100016109}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09dde6da5b7159f4d9a93259b99289a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb: {fileID: 9106692922100016017}
-  _camera: {fileID: 9106692922972507462}
-  moveSpeed: 4
-  jumpForce: 8
-  Ground:
-    serializedVersion: 2
-    m_Bits: 256
-  isGrounded: 0
---- !u!114 &9106692922100016019
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9106692922100016109}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4deaa80ff824f214e9f3a2b3221571e4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  portalLeft: {fileID: 1895658788814095072, guid: 8a78b73796e97b241a6da97476f387a2,
-    type: 3}
-  portalRight: {fileID: 8144807372611614243, guid: c0a0fcf0c45120849b296a82a9b41604,
-    type: 3}
---- !u!114 &9106692922100016108
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9106692922100016109}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ad67da744e33dc40ab5f1dec436bb1e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  distance: 3
-  smoothing: 4
 --- !u!114 &3769490334828253054
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -370,8 +318,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aec74b7fef01e8d48a55fc6b5f1621c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TcpClientController: {fileID: 0}
   Playable: 0
+  TcpClient: {fileID: 0}
+--- !u!114 &5110110818977400008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9106692922100016109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09dde6da5b7159f4d9a93259b99289a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerController: {fileID: 8680092200836629283}
+  rb: {fileID: 9106692922100016017}
+  _camera: {fileID: 9106692922972507462}
+  jumpForce: 6
+  Ground:
+    serializedVersion: 2
+    m_Bits: 256
+  isGrounded: 0
 --- !u!1 &9106692922972507463
 GameObject:
   m_ObjectHideFlags: 0
