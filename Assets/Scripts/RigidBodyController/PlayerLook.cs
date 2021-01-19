@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerLook : MonoBehaviour
 {
     public Transform player;
+    public PlayerController playerController;
 
     public float sensitivity = 4f;
 

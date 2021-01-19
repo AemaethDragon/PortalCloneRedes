@@ -3,8 +3,6 @@ ScriptsOnlyBuild:
     Assembly-CSharp.dll:
     - AudioManager
     - Creatable
-    - CreatePortal
-    - PickupObject
     - Pickupable
     - PlayerController
     - PlayerLook
@@ -78,53 +76,49 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11258}
     - Class: 114
-      Script: {instanceID: 11328}
+      Script: {instanceID: 11310}
     - Class: 114
-      Script: {instanceID: 11334}
+      Script: {instanceID: 11316}
     - Class: 114
-      Script: {instanceID: 11460}
+      Script: {instanceID: 11442}
     - Class: 114
-      Script: {instanceID: 11502}
+      Script: {instanceID: 11484}
     - Class: 114
-      Script: {instanceID: 11708}
+      Script: {instanceID: 11690}
     - Class: 114
-      Script: {instanceID: 11714}
+      Script: {instanceID: 11696}
     - Class: 114
-      Script: {instanceID: 11890}
+      Script: {instanceID: 11874}
     - Class: 114
-      Script: {instanceID: 11916}
+      Script: {instanceID: 11900}
     - Class: 114
-      Script: {instanceID: 12160}
+      Script: {instanceID: 12172}
     - Class: 114
-      Script: {instanceID: 12188}
+      Script: {instanceID: 12264}
     - Class: 114
-      Script: {instanceID: 12280}
+      Script: {instanceID: 12452}
     - Class: 114
-      Script: {instanceID: 12468}
+      Script: {instanceID: 12484}
     - Class: 114
-      Script: {instanceID: 12500}
+      Script: {instanceID: 12498}
     - Class: 114
-      Script: {instanceID: 12514}
+      Script: {instanceID: 12564}
     - Class: 114
-      Script: {instanceID: 12580}
+      Script: {instanceID: 12684}
     - Class: 114
-      Script: {instanceID: 12700}
+      Script: {instanceID: 12748}
     - Class: 114
-      Script: {instanceID: 12764}
+      Script: {instanceID: 12896}
     - Class: 114
-      Script: {instanceID: 12912}
+      Script: {instanceID: 13002}
     - Class: 114
       Script: {instanceID: 13018}
     - Class: 114
-      Script: {instanceID: 13034}
+      Script: {instanceID: 13098}
     - Class: 114
-      Script: {instanceID: 13092}
+      Script: {instanceID: 13104}
     - Class: 114
-      Script: {instanceID: 13114}
-    - Class: 114
-      Script: {instanceID: 13120}
-    - Class: 114
-      Script: {instanceID: 13140}
+      Script: {instanceID: 13124}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -166,7 +160,7 @@ ScriptsOnlyBuild:
     className: Pickupable
   - hash:
       serializedVersion: 2
-      Hash: 1cf1b4cbfd29bde5b16a0d14fe485775
+      Hash: d6031b43da9ba3696deb8139bac0bba0
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerLook
@@ -490,7 +484,7 @@ ScriptsOnlyBuild:
     className: TimelineAsset
   - hash:
       serializedVersion: 2
-      Hash: b317d59506ba7e536c772c584a38c451
+      Hash: 5a32423551bafd713db81b24b47dcb38
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerMovement
@@ -671,4 +665,4 @@ ScriptsOnlyBuild:
   platform: 19
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
-  playerPath: C:/Users/helde/Desktop/D/PortalCloneRedes.exe
+  playerPath: C:/Users/helde/Desktop/A/PortalCloneRedes.exe

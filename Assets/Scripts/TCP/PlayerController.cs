@@ -26,6 +26,12 @@ public class PlayerController : MonoBehaviour
             info.X = transform.position.x;
             info.Y = transform.position.y;
             info.Z = transform.position.z;
+            info.XQ = transform.rotation.x;
+            info.YQ = transform.rotation.y;
+            info.ZQ = transform.rotation.z;
+            info.WQ = transform.rotation.w;
+                
+                
             m.PlayerInfo = info;
             TcpClient.Player.SendMessage(m);
         }

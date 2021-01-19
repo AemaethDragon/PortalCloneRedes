@@ -191,7 +191,6 @@ GameObject:
   - component: {fileID: 9106692922100016016}
   - component: {fileID: 9106692922100016017}
   - component: {fileID: 3769490334828253054}
-  - component: {fileID: 8680092200836629283}
   - component: {fileID: 5110110818977400008}
   m_Layer: 0
   m_Name: PlayerTest
@@ -306,20 +305,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerName: {fileID: 7251631199115888712}
---- !u!114 &8680092200836629283
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9106692922100016109}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aec74b7fef01e8d48a55fc6b5f1621c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Playable: 0
-  TcpClient: {fileID: 0}
 --- !u!114 &5110110818977400008
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -332,10 +317,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09dde6da5b7159f4d9a93259b99289a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerController: {fileID: 8680092200836629283}
+  playerController: {fileID: 0}
   rb: {fileID: 9106692922100016017}
   _camera: {fileID: 9106692922972507462}
-  jumpForce: 6
   Ground:
     serializedVersion: 2
     m_Bits: 256
@@ -352,6 +336,7 @@ GameObject:
   - component: {fileID: 9106692922972507467}
   - component: {fileID: 9106692922972507460}
   - component: {fileID: 9106692922972507461}
+  - component: {fileID: 2718013180753265836}
   m_Layer: 0
   m_Name: PlayerCamera
   m_TagString: Untagged
@@ -437,4 +422,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 9106692922100016021}
+  playerController: {fileID: 2718013180753265836}
   sensitivity: 8
+--- !u!114 &2718013180753265836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9106692922972507463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aec74b7fef01e8d48a55fc6b5f1621c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Playable: 0
+  TcpClient: {fileID: 0}
