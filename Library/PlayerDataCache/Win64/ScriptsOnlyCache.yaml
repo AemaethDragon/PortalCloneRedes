@@ -3,6 +3,7 @@ ScriptsOnlyBuild:
     Assembly-CSharp.dll:
     - AudioManager
     - Creatable
+    - CreatePortal
     - Pickupable
     - PlayerController
     - PlayerLook
@@ -114,6 +115,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 13018}
     - Class: 114
+      Script: {instanceID: 13076}
+    - Class: 114
       Script: {instanceID: 13098}
     - Class: 114
       Script: {instanceID: 13104}
@@ -160,7 +163,7 @@ ScriptsOnlyBuild:
     className: Pickupable
   - hash:
       serializedVersion: 2
-      Hash: d6031b43da9ba3696deb8139bac0bba0
+      Hash: 3880710745f2411357ab586db3213050
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerLook
@@ -640,7 +643,7 @@ ScriptsOnlyBuild:
     className: SignalEmitter
   - hash:
       serializedVersion: 2
-      Hash: 7eff5a8f8d1ff06a347852a5e0a1395d
+      Hash: 73abf3e0b338f3c576a5a775fa14d8c0
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerController

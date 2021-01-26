@@ -59,17 +59,24 @@ public class TcpClientController : MonoBehaviour
             Message m = Player.ReadMessage();
             if (m.MessageType == MessageType.NewPlayer)
             {
-                GameObject newPlayer = Instantiate(PlayerPrefab,
-                    new Vector3(m.PlayerInfo.X, m.PlayerInfo.Y, m.PlayerInfo.Z), Quaternion.identity);
+                GameObject newPlayer = Instantiate(PlayerPrefab, new Vector3(m.PlayerInfo.X, m.PlayerInfo.Y, m.PlayerInfo.Z), Quaternion.identity);
                 newPlayer.GetComponent<PlayerUiController>().PlayerName.text = m.PlayerInfo.Name;
+
+                //CAMERA//
+                PlayerController temp = newPlayer.GetComponent<PlayerController>();
+                temp.Playable = false;
+                temp.camera.SetActive(false);
+                
                 _players.Add(m.PlayerInfo.Id, newPlayer);
+                
             }
             else if (m.MessageType == MessageType.PlayerMovement)
             {
                 if (m.PlayerInfo.Id != Player.Id && _players.ContainsKey(m.PlayerInfo.Id))
                 {
-                    _players[m.PlayerInfo.Id].transform.position =
-                        new Vector3(m.PlayerInfo.X, m.PlayerInfo.Y, m.PlayerInfo.Z);
+                    //SYNC EACH PLAYER INFO//
+                    _players[m.PlayerInfo.Id].transform.LookAt(new Vector3(m.PlayerInfo.lookX, _players[m.PlayerInfo.Id].transform.position.y, m.PlayerInfo.lookZ), Vector3.up);
+                    _players[m.PlayerInfo.Id].transform.position = new Vector3(m.PlayerInfo.X, m.PlayerInfo.Y, m.PlayerInfo.Z);
                 }
             }
         }
@@ -83,19 +90,16 @@ public class TcpClientController : MonoBehaviour
 
             if (message.MessageType == MessageType.NewPlayer)
             {
-                GameObject gameObject = Instantiate(PlayerPrefab,
-                    new Vector3(message.PlayerInfo.X, message.PlayerInfo.Y, message.PlayerInfo.Z),
-                    Quaternion.identity);
+                GameObject gameObject = Instantiate(PlayerPrefab, new Vector3(message.PlayerInfo.X, message.PlayerInfo.Y, message.PlayerInfo.Z),Quaternion.identity);
                 gameObject.GetComponent<PlayerUiController>().PlayerName.text = message.PlayerInfo.Name;
-
+                
                 _players.Add(message.PlayerInfo.Id, gameObject);
             }
             else if  (message.MessageType == MessageType.PlayerMovement)
             { 
                 if (_players.ContainsKey(message.PlayerInfo.Id))
                 {
-                    _players[message.PlayerInfo.Id].transform.position =
-                        new Vector3(message.PlayerInfo.X, message.PlayerInfo.Y, message.PlayerInfo.Z);
+                    _players[message.PlayerInfo.Id].transform.position = new Vector3(message.PlayerInfo.X, message.PlayerInfo.Y, message.PlayerInfo.Z);
                 }
             }
             else if (message.MessageType == MessageType.FinishedSync)

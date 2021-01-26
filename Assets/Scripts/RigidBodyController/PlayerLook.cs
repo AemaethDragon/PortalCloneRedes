@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class PlayerLook : MonoBehaviour
 {
-    public Transform player;
-    public PlayerController playerController;
-
+    public Camera camera;
     public float sensitivity = 4f;
+    public PlayerController playerController;
 
     float x = 0;
     float y = 0;
@@ -18,6 +17,8 @@ public class PlayerLook : MonoBehaviour
 
     void Update()
     {
+        if (!playerController.Playable) return;
+        
         //input
         x += -Input.GetAxis("Mouse Y") * sensitivity;
         y += Input.GetAxis("Mouse X") * sensitivity;
@@ -26,8 +27,8 @@ public class PlayerLook : MonoBehaviour
         x = Mathf.Clamp(x, -90, 90);
 
         //rotation
-        transform.localRotation = Quaternion.Euler(x, 0, 0);
-        player.transform.localRotation = Quaternion.Euler(0, y, 0);
+        camera.transform.localRotation = Quaternion.Euler(x, 0, 0);
+        transform.localRotation = Quaternion.Euler(0, y, 0);
 
         //cursorLocking
         if (Input.GetKeyDown(KeyCode.Escape))

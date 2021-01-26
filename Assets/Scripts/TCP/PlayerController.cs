@@ -12,11 +12,15 @@ public class PlayerController : MonoBehaviour
     private Vector3 _oldPosition;
     private float _moveSpeed = 4f;
     public TcpClientController TcpClient;
-    
+    public GameObject camera;
+    private Vector3 _oldRotation;
+    private Vector3 _viewTarget;
     void FixedUpdate()
     {
         if (!Playable) return;
-        if (transform.position != _oldPosition)
+        _viewTarget = transform.position + transform.forward;
+        
+        if (transform.position != _oldPosition || _viewTarget != _oldRotation)
         {
             Message m = new Message();
             m.MessageType = MessageType.PlayerMovement;
@@ -26,15 +30,14 @@ public class PlayerController : MonoBehaviour
             info.X = transform.position.x;
             info.Y = transform.position.y;
             info.Z = transform.position.z;
-            info.XQ = transform.rotation.x;
-            info.YQ = transform.rotation.y;
-            info.ZQ = transform.rotation.z;
-            info.WQ = transform.rotation.w;
-                
-                
+            info.lookX = _viewTarget.x;
+            info.lookY = _viewTarget.y;
+            info.lookZ = _viewTarget.z;
+
             m.PlayerInfo = info;
             TcpClient.Player.SendMessage(m);
         }
         _oldPosition = transform.position;
+        _oldRotation = _viewTarget;
     }
 }
