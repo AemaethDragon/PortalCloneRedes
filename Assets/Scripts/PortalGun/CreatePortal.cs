@@ -6,15 +6,15 @@ using UnityEngine;
 public class CreatePortal : MonoBehaviour
 {
     #region variables
-
+    public PlayerController playerController;
     public GameObject portalLeft;
     public GameObject portalRight;
+    public GameObject portalLeftClone;
+    public GameObject portalRightClone;
+    public GameObject _mainCamera;
 
     private bool portalLeftActive = true;
     private bool portalRightActive = true;
-    private GameObject portalLeftClone;
-    private GameObject portalRightClone;
-    private GameObject _mainCamera;
 
     Ray _bullet;
     RaycastHit _hit;
@@ -23,13 +23,9 @@ public class CreatePortal : MonoBehaviour
 
     #region methods
 
-    void Start()
-    {
-        _mainCamera = GameObject.FindWithTag("MainCamera");
-    }
-
     void Update()
     {
+        
         if (Input.GetButtonDown("Fire1"))
         {
             if (portalLeftActive)

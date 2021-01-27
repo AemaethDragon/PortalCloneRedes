@@ -453,6 +453,8 @@ MonoBehaviour:
   TcpClient: {fileID: 0}
   camera: {fileID: 9106692922972507463}
   cube: {fileID: 0}
+  leftPortal: {fileID: 0}
+  rigthPortal: {fileID: 0}
 --- !u!114 &7451653405128172503
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -465,8 +467,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4deaa80ff824f214e9f3a2b3221571e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  portalLeft: {fileID: 0}
-  portalRight: {fileID: 0}
+  portalLeft: {fileID: 1895658788814095072, guid: 8a78b73796e97b241a6da97476f387a2,
+    type: 3}
+  portalRight: {fileID: 8144807372611614243, guid: c0a0fcf0c45120849b296a82a9b41604,
+    type: 3}
+  portalLeftClone: {fileID: 0}
+  portalRightClone: {fileID: 0}
+  _mainCamera: {fileID: 9106692922972507463}
 --- !u!114 &4393623395807923699
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -480,8 +487,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mainCamera: {fileID: 9106692922972507463}
-  distance: 1
-  smoothing: 1
+  distance: 4
+  smoothing: 4
 --- !u!1 &9106692922972507463
 GameObject:
   m_ObjectHideFlags: 0

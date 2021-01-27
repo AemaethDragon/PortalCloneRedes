@@ -71,7 +71,8 @@
     <Compile Include="Assets\Scripts\Objects\PressurePlate.cs" />
     <Compile Include="Assets\Scripts\Objects\PressurePlateTrigger.cs" />
     <Compile Include="Assets\Scripts\PortalGun\CreatePortal.cs" />
-    <Compile Include="Assets\Scripts\PortalGun\Teleportation.cs" />
+    <Compile Include="Assets\Scripts\PortalGun\TeleportationLeft.cs" />
+    <Compile Include="Assets\Scripts\PortalGun\TeleportationRight.cs" />
     <Compile Include="Assets\Scripts\RigidBodyController\PickupObject.cs" />
     <Compile Include="Assets\Scripts\RigidBodyController\PlayerGrab.cs" />
     <Compile Include="Assets\Scripts\RigidBodyController\PlayerLook.cs" />

@@ -12,7 +12,8 @@ ScriptsOnlyBuild:
     - PlayerUiController
     - PressurePlate
     - TcpClientController
-    - Teleportation
+    - TeleportationLeft
+    - TeleportationRight
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     Unity.TextMeshPro.dll:
@@ -94,39 +95,41 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11900}
     - Class: 114
-      Script: {instanceID: 12144}
+      Script: {instanceID: 12084}
     - Class: 114
-      Script: {instanceID: 12172}
+      Script: {instanceID: 12146}
     - Class: 114
-      Script: {instanceID: 12264}
+      Script: {instanceID: 12174}
     - Class: 114
-      Script: {instanceID: 12452}
+      Script: {instanceID: 12266}
     - Class: 114
-      Script: {instanceID: 12484}
+      Script: {instanceID: 12454}
     - Class: 114
-      Script: {instanceID: 12498}
+      Script: {instanceID: 12486}
     - Class: 114
-      Script: {instanceID: 12564}
+      Script: {instanceID: 12500}
     - Class: 114
-      Script: {instanceID: 12684}
+      Script: {instanceID: 12566}
     - Class: 114
-      Script: {instanceID: 12732}
+      Script: {instanceID: 12686}
     - Class: 114
-      Script: {instanceID: 12748}
+      Script: {instanceID: 12734}
     - Class: 114
-      Script: {instanceID: 12896}
+      Script: {instanceID: 12750}
     - Class: 114
-      Script: {instanceID: 13002}
+      Script: {instanceID: 12898}
     - Class: 114
-      Script: {instanceID: 13018}
+      Script: {instanceID: 13004}
     - Class: 114
-      Script: {instanceID: 13076}
+      Script: {instanceID: 13020}
     - Class: 114
-      Script: {instanceID: 13098}
+      Script: {instanceID: 13078}
     - Class: 114
-      Script: {instanceID: 13104}
+      Script: {instanceID: 13100}
     - Class: 114
-      Script: {instanceID: 13124}
+      Script: {instanceID: 13106}
+    - Class: 114
+      Script: {instanceID: 13126}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -384,6 +387,12 @@ ScriptsOnlyBuild:
     className: ScrollRect
   - hash:
       serializedVersion: 2
+      Hash: f364ef174498ccb7f7568d7312b05dd5
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: TeleportationLeft
+  - hash:
+      serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -564,10 +573,10 @@ ScriptsOnlyBuild:
     className: TMP_ColorGradient
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: 99fed201b7f8fdabc3ddd83a66a43b52
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: Teleportation
+    className: TeleportationRight
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -600,7 +609,7 @@ ScriptsOnlyBuild:
     className: TMP_SubMesh
   - hash:
       serializedVersion: 2
-      Hash: 0b883602b2fcd48d507c981e3412c261
+      Hash: a58a8f3e6f0fed36ad0df427eb6a49ba
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: CreatePortal
@@ -648,7 +657,7 @@ ScriptsOnlyBuild:
     className: SignalEmitter
   - hash:
       serializedVersion: 2
-      Hash: 40523d110fd61735a84358c86ab64537
+      Hash: 7a528d4cb1a8819be48279f744120b84
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerController

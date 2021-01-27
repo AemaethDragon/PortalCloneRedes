@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8144807372611614247}
   - component: {fileID: 8144807372611614246}
   - component: {fileID: 8144807372611614241}
-  - component: {fileID: 7222258194037699530}
+  - component: {fileID: 2080289985356403803}
   m_Layer: 0
   m_Name: PortalRight
   m_TagString: PortalRight
@@ -91,7 +91,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8144807372611614243}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1.0000001, y: 1.0000001, z: 20}
@@ -112,7 +112,7 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 112
   m_CollisionDetection: 3
---- !u!114 &7222258194037699530
+--- !u!114 &2080289985356403803
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -124,6 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f32ac69e7739eaf4296e5ccfb3b732d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  leftPortal: {fileID: 0}
 --- !u!1 &8144807374417978188
 GameObject:
   m_ObjectHideFlags: 0

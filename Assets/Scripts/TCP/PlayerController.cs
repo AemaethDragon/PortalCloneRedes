@@ -16,12 +16,32 @@ public class PlayerController : MonoBehaviour
     private Vector3 _oldRotation;
     private Vector3 _viewTarget;
     public GameObject cube;
+    public GameObject leftPortal;
+    public GameObject rigthPortal;
 
     private void Update()
     {
         if (cube == null)
         {
             cube = FindObjectOfType<Pickupable>().gameObject;
+
+        }
+        try
+        {
+        if (leftPortal == null)
+        {
+            leftPortal = FindObjectOfType<TeleportationLeft>().gameObject;
+           
+        }
+        
+        if (rigthPortal == null)
+        {
+            rigthPortal = FindObjectOfType<TeleportationRight>().gameObject;
+        }
+          
+        }
+        catch (Exception)
+        {
 
         }
 
@@ -47,11 +67,18 @@ public class PlayerController : MonoBehaviour
             info.lookZ = _viewTarget.z;
             if (cube != null)
             {
-                info.cube1.Cy = cube.transform.position.x;
-                info.cube1.Cz = cube.transform.position.y;
-                info.cube1.Cx = cube.transform.position.z;
+                info.C1x = cube.transform.position.x;
+                info.C1y = cube.transform.position.y;
+                info.C1z = cube.transform.position.z;
 
             }
+            if (leftPortal != null)
+            {
+                info.P1x = leftPortal.transform.position.x;
+                info.P1y = leftPortal.transform.position.y;
+                info.P1z = leftPortal.transform.position.z;
+            }
+            
 
             m.PlayerInfo = info;
             TcpClient.Player.SendMessage(m);

@@ -77,7 +77,10 @@ public class TcpClientController : MonoBehaviour
                     //SYNC EACH PLAYER INFO//
                     _players[m.PlayerInfo.Id].transform.LookAt(new Vector3(m.PlayerInfo.lookX, _players[m.PlayerInfo.Id].transform.position.y, m.PlayerInfo.lookZ), Vector3.up);
                     _players[m.PlayerInfo.Id].transform.position = new Vector3(m.PlayerInfo.X, m.PlayerInfo.Y, m.PlayerInfo.Z);
-                    _players[m.PlayerInfo.Id].GetComponent<PlayerController>().cube.transform.position = new Vector3(m.PlayerInfo.cube1.Cx, m.PlayerInfo.cube1.Cy, m.PlayerInfo.cube1.Cz);
+                    _players[m.PlayerInfo.Id].GetComponent<PlayerController>().cube.transform.position = new Vector3(m.PlayerInfo.C1x, m.PlayerInfo.C1y, m.PlayerInfo.C1z);
+                    _players[m.PlayerInfo.Id].GetComponent<PlayerController>().leftPortal.transform.position = new Vector3(m.PlayerInfo.P1x, m.PlayerInfo.P1y, m.PlayerInfo.P1z);
+                    _players[m.PlayerInfo.Id].GetComponent<PlayerController>().rigthPortal.transform.position = new Vector3(m.PlayerInfo.P2x, m.PlayerInfo.P2y, m.PlayerInfo.P2z);
+                    
                 }
             }
         }
@@ -93,7 +96,11 @@ public class TcpClientController : MonoBehaviour
             {
                 GameObject gameObject = Instantiate(PlayerPrefab, new Vector3(message.PlayerInfo.X, message.PlayerInfo.Y, message.PlayerInfo.Z),Quaternion.identity);
                 gameObject.GetComponent<PlayerUiController>().PlayerName.text = message.PlayerInfo.Name;
-                
+
+                PlayerController temp = gameObject.GetComponent<PlayerController>();
+                temp.Playable = false;
+                temp.camera.SetActive(false);
+
                 _players.Add(message.PlayerInfo.Id, gameObject);
             }
             else if  (message.MessageType == MessageType.PlayerMovement)
