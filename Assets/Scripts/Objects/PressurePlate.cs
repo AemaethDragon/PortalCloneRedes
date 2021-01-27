@@ -5,16 +5,24 @@ using UnityEngine;
 public class PressurePlate : MonoBehaviour
 {
     [SerializeField]
-    GameObject pressurePlate;
+    public GameObject pressurePlate;
+    public GameObject stairs;
+    bool isPress;
 
-    bool isPress = false;
 
-    private void OnTriggerEnter(Collider col)
+
+    private void Start()
+    {
+        isPress = false;
+        stairs.SetActive(false);
+    }
+
+    private void OnCollisionEnter(Collider col)
     {
         if (!isPress)
         {
             isPress = true;
-            pressurePlate.transform.position += new Vector3(0.15f, 12.26f, -6.316681f);
+            stairs.SetActive(true);
         }
     }
 }

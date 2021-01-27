@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7553862135079797763}
   - component: {fileID: 3197492588135520810}
   - component: {fileID: 1330369769814980240}
+  - component: {fileID: 5565162632724893789}
   m_Layer: 0
   m_Name: PressurePlate
   m_TagString: Untagged
@@ -93,3 +94,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5565162632724893789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 24878176577113920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80dbc52c49c64a24ea47e99f602ca767, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pressurePlate: {fileID: 24878176577113920}
+  stairs: {fileID: 8654917787502436791, guid: 95ea1576f04f7a247b666e0b09413a82, type: 3}
