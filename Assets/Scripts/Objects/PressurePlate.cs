@@ -5,7 +5,6 @@ using UnityEngine;
 public class PressurePlate : MonoBehaviour
 {
     [SerializeField]
-    public GameObject pressurePlate;
     public GameObject stairs;
     bool isPress;
 
@@ -17,12 +16,20 @@ public class PressurePlate : MonoBehaviour
         stairs.SetActive(false);
     }
 
-    private void OnCollisionEnter(Collider col)
+    private void OnCollisionEnter(Collision collision)
     {
         if (!isPress)
         {
             isPress = true;
             stairs.SetActive(true);
+        }
+    }
+    private void OnCollisionExit(Collision collision)
+    {
+        if (isPress)
+        {
+            isPress = false;
+            stairs.SetActive(false);
         }
     }
 }

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2337902125081685566}
   - component: {fileID: 7233105513924677942}
   - component: {fileID: 4869556712422526037}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: platform (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105,7 +105,7 @@ GameObject:
   - component: {fileID: 1000257238997177239}
   - component: {fileID: 158652501250747654}
   - component: {fileID: 8909024094382325502}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: platform (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -198,7 +198,7 @@ GameObject:
   - component: {fileID: 3654229221386516053}
   - component: {fileID: 6978618079950966326}
   - component: {fileID: 6908457501329074702}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: platform (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -291,7 +291,7 @@ GameObject:
   - component: {fileID: 1919198169049654674}
   - component: {fileID: 9004131521987353651}
   - component: {fileID: 5060532649410823809}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: platform (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -477,7 +477,7 @@ GameObject:
   - component: {fileID: 8163969256087915916}
   - component: {fileID: 5324570993196704063}
   - component: {fileID: 1620298967844303613}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: platform (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -708,7 +708,7 @@ GameObject:
   - component: {fileID: 4566660974417719861}
   - component: {fileID: 7546750437684771443}
   - component: {fileID: 6460960035391844081}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: platform (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -801,7 +801,7 @@ GameObject:
   - component: {fileID: 5075649589469839313}
   - component: {fileID: 2988278990881131102}
   - component: {fileID: 1849948679908194326}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1080,7 +1080,7 @@ GameObject:
   - component: {fileID: 6487502073982853859}
   - component: {fileID: 1545125927774024045}
   - component: {fileID: 5855439057383087805}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}

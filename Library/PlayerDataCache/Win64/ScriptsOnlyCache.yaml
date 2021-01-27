@@ -4,15 +4,16 @@ ScriptsOnlyBuild:
     - AudioManager
     - Creatable
     - CreatePortal
+    - PickupObject
     - Pickupable
     - PlayerController
     - PlayerLook
     - PlayerMovement
     - PlayerUiController
+    - PressurePlate
     - TcpClientController
     - Teleportation
     Unity.Rider.Editor.dll:
-    - Packages.Rider.Editor.RiderScriptEditorData
     - Packages.Rider.Editor.UnitTesting.CallbackData
     Unity.TextMeshPro.dll:
     - TMPro.TMP_ColorGradient
@@ -93,6 +94,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11900}
     - Class: 114
+      Script: {instanceID: 12144}
+    - Class: 114
       Script: {instanceID: 12172}
     - Class: 114
       Script: {instanceID: 12264}
@@ -106,6 +109,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 12564}
     - Class: 114
       Script: {instanceID: 12684}
+    - Class: 114
+      Script: {instanceID: 12732}
     - Class: 114
       Script: {instanceID: 12748}
     - Class: 114
@@ -391,7 +396,7 @@ ScriptsOnlyBuild:
     className: TMP_SpriteAnimator
   - hash:
       serializedVersion: 2
-      Hash: b8af0314b3225152dd640b5c7d3a5b5d
+      Hash: 44db0d826fab138a9c72f0e10d6987f6
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PickupObject
@@ -505,7 +510,7 @@ ScriptsOnlyBuild:
     className: TextMeshProUGUI
   - hash:
       serializedVersion: 2
-      Hash: 92c92ab09c5684594ef9f5b92f7a94b1
+      Hash: 46aa846cfd4c3793286d4ed795184f8d
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PressurePlate
@@ -643,7 +648,7 @@ ScriptsOnlyBuild:
     className: SignalEmitter
   - hash:
       serializedVersion: 2
-      Hash: 73abf3e0b338f3c576a5a775fa14d8c0
+      Hash: 40523d110fd61735a84358c86ab64537
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerController
@@ -668,4 +673,4 @@ ScriptsOnlyBuild:
   platform: 19
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
-  playerPath: C:/Users/helde/Desktop/A/PortalCloneRedes.exe
+  playerPath: "C:/Users/filip/Desktop/3\xBAano/PAI/TrabalhoPraticoRedes/PortalCloneRedes.exe"

@@ -288,6 +288,7 @@ GameObject:
   - component: {fileID: 4883785483541428627}
   - component: {fileID: -8407220695957855479}
   - component: {fileID: 7451653405128172503}
+  - component: {fileID: 4393623395807923699}
   m_Layer: 0
   m_Name: PlayerTest
   m_TagString: Player
@@ -451,6 +452,7 @@ MonoBehaviour:
   Playable: 0
   TcpClient: {fileID: 0}
   camera: {fileID: 9106692922972507463}
+  cube: {fileID: 0}
 --- !u!114 &7451653405128172503
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -465,6 +467,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   portalLeft: {fileID: 0}
   portalRight: {fileID: 0}
+--- !u!114 &4393623395807923699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9106692922100016109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ad67da744e33dc40ab5f1dec436bb1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mainCamera: {fileID: 9106692922972507463}
+  distance: 1
+  smoothing: 1
 --- !u!1 &9106692922972507463
 GameObject:
   m_ObjectHideFlags: 0

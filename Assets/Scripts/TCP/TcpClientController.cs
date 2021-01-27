@@ -77,6 +77,7 @@ public class TcpClientController : MonoBehaviour
                     //SYNC EACH PLAYER INFO//
                     _players[m.PlayerInfo.Id].transform.LookAt(new Vector3(m.PlayerInfo.lookX, _players[m.PlayerInfo.Id].transform.position.y, m.PlayerInfo.lookZ), Vector3.up);
                     _players[m.PlayerInfo.Id].transform.position = new Vector3(m.PlayerInfo.X, m.PlayerInfo.Y, m.PlayerInfo.Z);
+                    _players[m.PlayerInfo.Id].GetComponent<PlayerController>().cube.transform.position = new Vector3(m.PlayerInfo.cube1.Cx, m.PlayerInfo.cube1.Cy, m.PlayerInfo.cube1.Cz);
                 }
             }
         }

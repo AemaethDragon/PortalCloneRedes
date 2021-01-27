@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PickupObject : MonoBehaviour
 {
-    private GameObject _mainCamera;
+    public GameObject _mainCamera;
     private bool _holding;
     private GameObject _holdingObject;
     
@@ -13,10 +13,7 @@ public class PickupObject : MonoBehaviour
     
     Ray _pickObject;
     RaycastHit _hit;
-    void Start()
-    {
-        _mainCamera = GameObject.FindWithTag("MainCamera");
-    }
+    
     
     void Update()
     {

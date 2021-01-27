@@ -15,11 +15,23 @@ public class PlayerController : MonoBehaviour
     public GameObject camera;
     private Vector3 _oldRotation;
     private Vector3 _viewTarget;
+    public GameObject cube;
+
+    private void Update()
+    {
+        if (cube == null)
+        {
+            cube = FindObjectOfType<Pickupable>().gameObject;
+
+        }
+
+
+    }
     void FixedUpdate()
     {
         if (!Playable) return;
         _viewTarget = transform.position + transform.forward;
-        
+
         if (transform.position != _oldPosition || _viewTarget != _oldRotation)
         {
             Message m = new Message();
@@ -33,11 +45,20 @@ public class PlayerController : MonoBehaviour
             info.lookX = _viewTarget.x;
             info.lookY = _viewTarget.y;
             info.lookZ = _viewTarget.z;
+            if (cube != null)
+            {
+                info.cube1.Cy = cube.transform.position.x;
+                info.cube1.Cz = cube.transform.position.y;
+                info.cube1.Cx = cube.transform.position.z;
+
+            }
 
             m.PlayerInfo = info;
             TcpClient.Player.SendMessage(m);
         }
         _oldPosition = transform.position;
         _oldRotation = _viewTarget;
+
+       
     }
 }
