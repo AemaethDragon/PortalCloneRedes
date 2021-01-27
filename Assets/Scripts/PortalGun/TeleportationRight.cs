@@ -38,7 +38,7 @@ public class TeleportationRight : MonoBehaviour
             _goTo = leftPortal.transform;
             collision.transform.position = new Vector3(_goTo.transform.position.x,
                 _goTo.transform.position.y, _goTo.transform.position.z + 2);
-            collision.transform.Rotate(Vector3.up, 180f);
+            collision.transform.Rotate(Vector3.forward, 180f);
 
         }
         //_goTo = _tempPortalLeft.transform;

@@ -81,6 +81,7 @@
     <Compile Include="Assets\Scripts\Sound\Sound.cs" />
     <Compile Include="Assets\Scripts\TCP\PlayerController.cs" />
     <Compile Include="Assets\Scripts\TCP\PlayerUiController.cs" />
+    <Compile Include="Assets\Scripts\TCP\ResetPosition.cs" />
     <Compile Include="Assets\Scripts\TCP\TcpClientController.cs" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
