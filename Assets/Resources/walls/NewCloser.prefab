@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1889201286211325772}
   - component: {fileID: 1150125074617440261}
   - component: {fileID: 4832439099769740995}
+  - component: {fileID: 1265548453418003225}
   m_Layer: 8
   m_Name: SmallStairs
   m_TagString: Untagged
@@ -93,6 +94,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1265548453418003225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 298249384817746061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2623c08332ef29743999335f335c69f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2707165752043393238
 GameObject:
   m_ObjectHideFlags: 0
@@ -105,6 +118,7 @@ GameObject:
   - component: {fileID: 2707165752043393242}
   - component: {fileID: 2707165752043393241}
   - component: {fileID: 2707165752043393240}
+  - component: {fileID: 523148627174776930}
   m_Layer: 0
   m_Name: Wall (4)
   m_TagString: Untagged
@@ -186,6 +200,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &523148627174776930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2707165752043393238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2623c08332ef29743999335f335c69f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2707165752925575035
 GameObject:
   m_ObjectHideFlags: 0
@@ -198,6 +224,7 @@ GameObject:
   - component: {fileID: 2707165752925575039}
   - component: {fileID: 2707165752925575038}
   - component: {fileID: 2707165752925575037}
+  - component: {fileID: 5075887181990083491}
   m_Layer: 8
   m_Name: Wall (6)
   m_TagString: Untagged
@@ -279,6 +306,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5075887181990083491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2707165752925575035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2623c08332ef29743999335f335c69f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2707165753316979099
 GameObject:
   m_ObjectHideFlags: 0
@@ -291,6 +330,7 @@ GameObject:
   - component: {fileID: 2707165753316979103}
   - component: {fileID: 2707165753316979102}
   - component: {fileID: 2707165753316979101}
+  - component: {fileID: 2603341400097887108}
   m_Layer: 0
   m_Name: Wall (5)
   m_TagString: Untagged
@@ -372,6 +412,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2603341400097887108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2707165753316979099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2623c08332ef29743999335f335c69f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2979489178806912065
 GameObject:
   m_ObjectHideFlags: 0
@@ -384,6 +436,7 @@ GameObject:
   - component: {fileID: 6946517183064057555}
   - component: {fileID: 7185012288877909095}
   - component: {fileID: 3906774500858693150}
+  - component: {fileID: 4653176740640887359}
   m_Layer: 8
   m_Name: SmallStairs (2)
   m_TagString: Untagged
@@ -465,6 +518,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4653176740640887359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2979489178806912065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2623c08332ef29743999335f335c69f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4303178162692113790
 GameObject:
   m_ObjectHideFlags: 0
@@ -477,6 +542,7 @@ GameObject:
   - component: {fileID: 9173116698707332907}
   - component: {fileID: 5022787279180645995}
   - component: {fileID: 3573635865642992941}
+  - component: {fileID: 3700747450133192921}
   m_Layer: 8
   m_Name: SmallStairs (1)
   m_TagString: Untagged
@@ -558,6 +624,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3700747450133192921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4303178162692113790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2623c08332ef29743999335f335c69f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6192512796038042923
 GameObject:
   m_ObjectHideFlags: 0

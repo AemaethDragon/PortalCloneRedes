@@ -17,25 +17,20 @@ public class CreatePortal : MonoBehaviour
 
     #region methods
 
-    void FixedUpdate()
+    void Update()
     {
-
+        if (!playerController.Playable) return;
         
         if (Input.GetButtonDown("Fire1"))
         {
-            MovePortal(playerController.leftPortal);
-           
-
+            MovePortal(FindObjectOfType<TeleportationLeft>().gameObject);
         }
 
         if (Input.GetButtonDown("Fire2"))
         {
-            MovePortal(playerController.rigthPortal);
-          
+            MovePortal(FindObjectOfType<TeleportationRight>().gameObject);
         }
     }
-
-  
     
     void MovePortal(GameObject portal)
     {
@@ -46,7 +41,6 @@ public class CreatePortal : MonoBehaviour
 
         if (Physics.Raycast(_bullet, out _hit))
         {
-
             Creatable c = _hit.collider.GetComponent<Creatable>();
             if (c != null)
             {

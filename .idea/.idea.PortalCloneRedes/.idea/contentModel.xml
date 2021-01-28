@@ -15,16 +15,18 @@
           <e p="Objects" t="Include">
             <e p="Creatable.cs" t="Include" />
             <e p="Pickupable.cs" t="Include" />
+            <e p="Pickupable1.cs" t="Include" />
+            <e p="Pickupable2.cs" t="Include" />
             <e p="PressurePlate.cs" t="Include" />
             <e p="PressurePlateTrigger.cs" t="Include" />
           </e>
           <e p="PortalGun" t="Include">
             <e p="CreatePortal.cs" t="Include" />
-            <e p="Teleportation.cs" t="Include" />
+            <e p="TeleportationLeft.cs" t="Include" />
+            <e p="TeleportationRight.cs" t="Include" />
           </e>
           <e p="RigidBodyController" t="Include">
             <e p="PickupObject.cs" t="Include" />
-            <e p="PlayerGrab.cs" t="Include" />
             <e p="PlayerLook.cs" t="Include" />
             <e p="PlayerMovement.cs" t="Include" />
           </e>
@@ -35,6 +37,7 @@
           <e p="TCP" t="Include">
             <e p="PlayerController.cs" t="Include" />
             <e p="PlayerUiController.cs" t="Include" />
+            <e p="ResetPosition.cs" t="Include" />
             <e p="TcpClientController.cs" t="Include" />
           </e>
         </e>

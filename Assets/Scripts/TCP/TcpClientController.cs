@@ -77,9 +77,11 @@ public class TcpClientController : MonoBehaviour
                     //SYNC EACH PLAYER INFO//
                     _players[m.PlayerInfo.Id].transform.LookAt(new Vector3(m.PlayerInfo.lookX, _players[m.PlayerInfo.Id].transform.position.y, m.PlayerInfo.lookZ), Vector3.up);
                     _players[m.PlayerInfo.Id].transform.position = new Vector3(m.PlayerInfo.X, m.PlayerInfo.Y, m.PlayerInfo.Z);
-                    _players[m.PlayerInfo.Id].GetComponent<PlayerController>().cube.transform.position = new Vector3(m.PlayerInfo.C1x, m.PlayerInfo.C1y, m.PlayerInfo.C1z);
+                    _players[m.PlayerInfo.Id].GetComponent<PlayerController>().cube1.transform.position = new Vector3(m.PlayerInfo.C1x, m.PlayerInfo.C1y, m.PlayerInfo.C1z);
+                    _players[m.PlayerInfo.Id].GetComponent<PlayerController>().cube2.transform.position = new Vector3(m.PlayerInfo.C2x, m.PlayerInfo.C2y, m.PlayerInfo.C2z);
+                    _players[m.PlayerInfo.Id].GetComponent<PlayerController>().cube3.transform.position = new Vector3(m.PlayerInfo.C3x, m.PlayerInfo.C3y, m.PlayerInfo.C3z);
                     _players[m.PlayerInfo.Id].GetComponent<PlayerController>().leftPortal.transform.position = new Vector3(m.PlayerInfo.P1x, m.PlayerInfo.P1y, m.PlayerInfo.P1z);
-                    _players[m.PlayerInfo.Id].GetComponent<PlayerController>().rigthPortal.transform.position = new Vector3(m.PlayerInfo.P2x, m.PlayerInfo.P2y, m.PlayerInfo.P2z);
+                    _players[m.PlayerInfo.Id].GetComponent<PlayerController>().rightPortal.transform.position = new Vector3(m.PlayerInfo.P2x, m.PlayerInfo.P2y, m.PlayerInfo.P2z);
                     
                 }
             }

@@ -6,9 +6,9 @@ public class TeleportationLeft : MonoBehaviour
 {
     #region variables
     private Transform _goTo;
-    //public CreatePortal createPortal;
-    public GameObject rigthPortal;
     private bool _hasCollide;
+
+    public GameObject rightPortal;
 
     #endregion
 
@@ -16,46 +16,34 @@ public class TeleportationLeft : MonoBehaviour
     private void Start()
     {
         _hasCollide = false;
+        rightPortal = FindObjectOfType<TeleportationRight>().gameObject;
     }
-    private void Update()
-    {
-        try
-        {
-            if (rigthPortal == null)
-            {
-                rigthPortal = FindObjectOfType<TeleportationRight>().gameObject;
 
-            }
-        }
-        catch (System.Exception)
-        {
-        }
-    }
+    
+    
 
     private void OnCollisionEnter(Collision collision)
     {
-
-
-        //_goTo = createPortal.portalRightClone.transform;
-        //collision.transform.position = new Vector3(_goTo.transform.position.x,
-        //    _goTo.transform.position.y, _goTo.transform.position.z + 2);
-        //collision.transform.Rotate(Vector3.up, 180f);
-
-
         if (!_hasCollide)
         {
             _hasCollide = true;
-            _goTo = rigthPortal.transform;
-            collision.transform.position = new Vector3(_goTo.transform.position.x,
-                    _goTo.transform.position.y, _goTo.transform.position.z - 2);
-            collision.transform.Rotate(Vector3.up, 180f);
-
+            StartCoroutine(CoroutineGoTo(rightPortal.transform,collision));
         }
-
     }
+
+    IEnumerator CoroutineGoTo(Transform transform, Collision collision)
+    {
+        Vector3 temp = new Vector3(Quaternion.identity.x, Quaternion.identity.y, Quaternion.identity.z);
+        _goTo = transform;
+        collision.transform.position = new Vector3(_goTo.transform.position.x, _goTo.transform.position.y, _goTo.transform.position.z + 2);
+        collision.transform.Rotate(temp, 180f);
+        yield return new WaitForSeconds(1f);
+    }
+
     private void OnCollisionExit(Collision collision)
     {
         _hasCollide = false;
     }
+
     #endregion
 }

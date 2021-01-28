@@ -67,6 +67,22 @@ public class PickupObject : MonoBehaviour
                     _holding = true;
                     _holdingObject = p.gameObject;
                 }
+                
+                Pickupable1 p1 = _hit.collider.GetComponent<Pickupable1>();
+                if (p1 != null)
+                {
+                    _holding = true;
+                    _holdingObject = p1.gameObject;
+                }
+                
+                Pickupable2 p2 = _hit.collider.GetComponent<Pickupable2>();
+                if (p2 != null)
+                {
+                    _holding = true;
+                    _holdingObject = p2.gameObject;
+                }
+                
+                
             }
         }
     }
