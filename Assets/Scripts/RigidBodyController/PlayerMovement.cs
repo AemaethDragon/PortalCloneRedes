@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask Ground;
     public bool isGrounded;
 
-    private float _jumpForce = 4f;
+    private float _jumpForce = 7f;
     private float _moveSpeed = 4f;
 
     void Update()

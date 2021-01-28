@@ -287,7 +287,6 @@ GameObject:
   - component: {fileID: 5110110818977400008}
   - component: {fileID: 4883785483541428627}
   - component: {fileID: -8407220695957855479}
-  - component: {fileID: 7451653405128172503}
   - component: {fileID: 4393623395807923699}
   m_Layer: 0
   m_Name: PlayerTest
@@ -457,20 +456,6 @@ MonoBehaviour:
   cube3: {fileID: 0}
   leftPortal: {fileID: 0}
   rightPortal: {fileID: 0}
---- !u!114 &7451653405128172503
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9106692922100016109}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4deaa80ff824f214e9f3a2b3221571e4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerController: {fileID: -8407220695957855479}
-  _mainCamera: {fileID: 9106692922972507463}
 --- !u!114 &4393623395807923699
 MonoBehaviour:
   m_ObjectHideFlags: 0

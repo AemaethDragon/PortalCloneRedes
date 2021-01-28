@@ -6,13 +6,16 @@ using System;
 public class ResetPosition : MonoBehaviour
 {
     public GameObject spawnPoint;
-    private bool _fell; 
+    private Transform _goTo;
+    private bool _fell;
+
+    
     private void OnCollisionEnter(Collision collision)
     {
         if (!_fell)
         {
             _fell = true;
-            StartCoroutine(ResetPositionCoroutine(collision.gameObject.transform));
+            StartCoroutine(CoroutineResetPos(spawnPoint.transform,collision));
         }
     }
     private void OnCollisionExit(Collision collision)
@@ -23,9 +26,10 @@ public class ResetPosition : MonoBehaviour
         }
     }
 
-    public IEnumerator ResetPositionCoroutine(Transform resetPos)
-    {
-        resetPos = spawnPoint.transform;
-        yield return new WaitForSeconds(2);
+    IEnumerator CoroutineResetPos(Transform transform, Collision collision)
+    {       
+        _goTo = transform;
+        collision.transform.position = new Vector3(_goTo.transform.position.x, _goTo.transform.position.y, _goTo.transform.position.z + 2);       
+        yield return new WaitForSeconds(1f);
     }
 }

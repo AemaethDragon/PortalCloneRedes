@@ -66,23 +66,22 @@ public class TcpClientController : MonoBehaviour
                 PlayerController temp = newPlayer.GetComponent<PlayerController>();
                 temp.Playable = false;
                 temp.camera.SetActive(false);
-                
+
                 _players.Add(m.PlayerInfo.Id, newPlayer);
-                
+
             }
             else if (m.MessageType == MessageType.PlayerMovement)
             {
                 if (m.PlayerInfo.Id != Player.Id && _players.ContainsKey(m.PlayerInfo.Id))
                 {
+                    PlayerController temp = _players[m.PlayerInfo.Id].GetComponent<PlayerController>();
                     //SYNC EACH PLAYER INFO//
                     _players[m.PlayerInfo.Id].transform.LookAt(new Vector3(m.PlayerInfo.lookX, _players[m.PlayerInfo.Id].transform.position.y, m.PlayerInfo.lookZ), Vector3.up);
                     _players[m.PlayerInfo.Id].transform.position = new Vector3(m.PlayerInfo.X, m.PlayerInfo.Y, m.PlayerInfo.Z);
-                    _players[m.PlayerInfo.Id].GetComponent<PlayerController>().cube1.transform.position = new Vector3(m.PlayerInfo.C1x, m.PlayerInfo.C1y, m.PlayerInfo.C1z);
-                    _players[m.PlayerInfo.Id].GetComponent<PlayerController>().cube2.transform.position = new Vector3(m.PlayerInfo.C2x, m.PlayerInfo.C2y, m.PlayerInfo.C2z);
-                    _players[m.PlayerInfo.Id].GetComponent<PlayerController>().cube3.transform.position = new Vector3(m.PlayerInfo.C3x, m.PlayerInfo.C3y, m.PlayerInfo.C3z);
-                    _players[m.PlayerInfo.Id].GetComponent<PlayerController>().leftPortal.transform.position = new Vector3(m.PlayerInfo.P1x, m.PlayerInfo.P1y, m.PlayerInfo.P1z);
-                    _players[m.PlayerInfo.Id].GetComponent<PlayerController>().rightPortal.transform.position = new Vector3(m.PlayerInfo.P2x, m.PlayerInfo.P2y, m.PlayerInfo.P2z);
-                    
+                    temp.cube1.transform.position = new Vector3(m.PlayerInfo.C1x, m.PlayerInfo.C1y, m.PlayerInfo.C1z);
+                    temp.leftPortal.transform.position = new Vector3(m.PlayerInfo.P1x, m.PlayerInfo.P1y, m.PlayerInfo.P1z);
+                    temp.rightPortal.transform.position = new Vector3(m.PlayerInfo.P2x, m.PlayerInfo.P2y, m.PlayerInfo.P2z);
+
                 }
             }
             else if (m.MessageType == MessageType.PlayerDisc)
@@ -101,7 +100,7 @@ public class TcpClientController : MonoBehaviour
 
             if (message.MessageType == MessageType.NewPlayer)
             {
-                GameObject gameObject = Instantiate(PlayerPrefab, new Vector3(message.PlayerInfo.X, message.PlayerInfo.Y, message.PlayerInfo.Z),Quaternion.identity);
+                GameObject gameObject = Instantiate(PlayerPrefab, new Vector3(message.PlayerInfo.X, message.PlayerInfo.Y, message.PlayerInfo.Z), Quaternion.identity);
                 gameObject.GetComponent<PlayerUiController>().PlayerName.text = message.PlayerInfo.Name;
 
                 PlayerController temp = gameObject.GetComponent<PlayerController>();
@@ -110,8 +109,8 @@ public class TcpClientController : MonoBehaviour
 
                 _players.Add(message.PlayerInfo.Id, gameObject);
             }
-            else if  (message.MessageType == MessageType.PlayerMovement)
-            { 
+            else if (message.MessageType == MessageType.PlayerMovement)
+            {
                 if (_players.ContainsKey(message.PlayerInfo.Id))
                 {
                     _players[message.PlayerInfo.Id].transform.position = new Vector3(message.PlayerInfo.X, message.PlayerInfo.Y, message.PlayerInfo.Z);

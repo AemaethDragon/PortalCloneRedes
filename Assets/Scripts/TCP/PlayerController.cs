@@ -16,8 +16,6 @@ public class PlayerController : MonoBehaviour
     private Vector3 _oldRotation;
     private Vector3 _viewTarget;
     public GameObject cube1;
-    public GameObject cube2;
-    public GameObject cube3;
     public GameObject leftPortal;
     public GameObject rightPortal;
 
@@ -27,17 +25,6 @@ public class PlayerController : MonoBehaviour
         {
             cube1 = FindObjectOfType<Pickupable>().gameObject;
         }
-
-        if (cube2 == null)
-        {
-            cube2 = FindObjectOfType<Pickupable>().gameObject;
-        }
-        
-        if (cube3 == null)
-        {
-            cube3 = FindObjectOfType<Pickupable>().gameObject;
-        }
-
         if (leftPortal == null)
         {
             leftPortal = FindObjectOfType<TeleportationLeft>().gameObject;
@@ -78,23 +65,7 @@ public class PlayerController : MonoBehaviour
                 info.C1z = cube1.transform.position.z;
 
             }
-            
-            if (cube2 != null)
-            {
-                info.C2x = cube2.transform.position.x;
-                info.C2y = cube2.transform.position.y;
-                info.C2z = cube2.transform.position.z;
-
-            }
-            
-            if (cube3 != null)
-            {
-                info.C3x = cube3.transform.position.x;
-                info.C3y = cube3.transform.position.y;
-                info.C3z = cube3.transform.position.z;
-
-            }
-            
+                                  
             if (leftPortal != null)
             {
                 info.P1x = leftPortal.transform.position.x;
