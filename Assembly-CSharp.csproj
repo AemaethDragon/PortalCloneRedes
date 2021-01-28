@@ -101,31 +101,31 @@
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
  <Reference Include="Unity.Timeline.Editor">
- <HintPath>C:/Users/helde/Documents/GitKraken/PortalCloneRedes/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+ <HintPath>D:/PortalRipOff/PortalCloneRedes/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.VSCode.Editor">
- <HintPath>C:/Users/helde/Documents/GitKraken/PortalCloneRedes/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+ <HintPath>D:/PortalRipOff/PortalCloneRedes/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro.Editor">
- <HintPath>C:/Users/helde/Documents/GitKraken/PortalCloneRedes/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+ <HintPath>D:/PortalRipOff/PortalCloneRedes/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
- <HintPath>C:/Users/helde/Documents/GitKraken/PortalCloneRedes/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+ <HintPath>D:/PortalRipOff/PortalCloneRedes/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Timeline">
- <HintPath>C:/Users/helde/Documents/GitKraken/PortalCloneRedes/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+ <HintPath>D:/PortalRipOff/PortalCloneRedes/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
  </Reference>
  <Reference Include="Unity.CollabProxy.Editor">
- <HintPath>C:/Users/helde/Documents/GitKraken/PortalCloneRedes/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+ <HintPath>D:/PortalRipOff/PortalCloneRedes/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Rider.Editor">
- <HintPath>C:/Users/helde/Documents/GitKraken/PortalCloneRedes/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+ <HintPath>D:/PortalRipOff/PortalCloneRedes/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro">
- <HintPath>C:/Users/helde/Documents/GitKraken/PortalCloneRedes/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+ <HintPath>D:/PortalRipOff/PortalCloneRedes/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.UI">
- <HintPath>C:/Users/helde/Documents/GitKraken/PortalCloneRedes/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+ <HintPath>D:/PortalRipOff/PortalCloneRedes/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.AIModule">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.12f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -305,10 +305,10 @@
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.12f1/Editor/Data/Managed/UnityEngine/UnityEngine.XRModule.dll</HintPath>
  </Reference>
  <Reference Include="Common">
- <HintPath>C:/Users/helde/Documents/GitKraken/PortalCloneRedes/Assets/Plugins/Libraries/Common.dll</HintPath>
+ <HintPath>D:/PortalRipOff/PortalCloneRedes/Assets/Plugins/Libraries/Common.dll</HintPath>
  </Reference>
  <Reference Include="Newtonsoft.Json">
- <HintPath>C:/Users/helde/Documents/GitKraken/PortalCloneRedes/Assets/Plugins/Libraries/Newtonsoft.Json.dll</HintPath>
+ <HintPath>D:/PortalRipOff/PortalCloneRedes/Assets/Plugins/Libraries/Newtonsoft.Json.dll</HintPath>
  </Reference>
  <Reference Include="mscorlib">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.12f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>

@@ -85,6 +85,11 @@ public class TcpClientController : MonoBehaviour
                     
                 }
             }
+            else if (m.MessageType == MessageType.PlayerDisc)
+            {
+                Destroy(_players[m.PlayerInfo.Id]);
+                _players.Remove(m.PlayerInfo.Id);
+            }
         }
     }
     private void Sync()
@@ -169,5 +174,16 @@ public class TcpClientController : MonoBehaviour
         {
             Debug.Log("Connection to the server refused");
         }
+    }
+
+    private void OnApplicationQuit()
+    {
+        Message m = new Message();
+        m.MessageType = MessageType.PlayerDisc;
+        PlayerInfo info = new PlayerInfo();
+        info.Id = Player.Id;
+        info.Name = Player.Name;
+        m.PlayerInfo = info;
+        Player.SendMessage(m);
     }
 }
